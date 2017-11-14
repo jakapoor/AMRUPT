@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="configPkg" version="" producerId="undefined">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/cfg/rfExamples_pem3.c"/>
+    </sources>
+    <configscripts>
+        <srcFile name="/Users/nathanshen95/Documents/workspace/rfWakeOnRadioTx_CC1310_LAUNCHXL_TI/rfExamples.cfg"/>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/rfExamples_pem3.mak" src="package.bld"/>
+        <srcFile name="package/cfg/rfExamples_pem3.oem3.dep" src="package/cfg/rfExamples_pem3.c"/>
+        <srcFile name="package/cfg/rfExamples_pem3.dep" src="package/cfg/rfExamples_pem3.cfg"/>
+        <srcFile name="package/cfg/rfExamples.xem3.mak" src="package.bld"/>
+        <srcFile name="package/rel/configPkg.tar.dep" src="package/rel/configPkg.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.arm.elf.M3"
+            version="ti.targets.arm.elf.M3{1,0,16.9,4"
+            rawVersion="16.9.4"
+            platform="ti.platforms.simCM3"
+            isa="v7M"
+            suffix="em3"
+            rootDir="/Applications/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <configurations>
+    <configuration name="rfExamples"
+        pname="rfExamples.pem3"
+        target="ti.targets.arm.elf.M3"
+        platform="ti.platforms.simplelink:CC1310F128"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/rfExamples_pem3.cfg"
+        xCfgPrefix="package/cfg/rfExamples_pem3"
+        cfgScript="/Users/nathanshen95/Documents/workspace/rfWakeOnRadioTx_CC1310_LAUNCHXL_TI/rfExamples.cfg"
+        cfgArgs="null"
+        />
+    </configurations>
+    <executables>
+    <executable name="rfExamples"
+        pname="rfExamples.xem3"
+        target="ti.targets.arm.elf.M3"
+        platform="ti.platforms.simplelink:CC1310F128"
+        profile="release"
+        xCfgScript="package/cfg/rfExamples_pem3.cfg"
+        xCfgPrefix="package/cfg/rfExamples_pem3"
+        cfgScript="/Users/nathanshen95/Documents/workspace/rfWakeOnRadioTx_CC1310_LAUNCHXL_TI/rfExamples.cfg"
+        cfgArgs="null"
+        />
+    </executables>
+    <tests>
+    <test exeName="rfExamples.xem3"
+        args=""
+        groupName="rfExamples.xem3"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="configPkg"
+        pname="configPkg.tar"
+        label="default"
+    >
+        <file name="package/package.bld.xml"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

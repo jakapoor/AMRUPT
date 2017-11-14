@@ -1,0 +1,1 @@
+"./CC1310_LAUNCHXL.obj" "./ccfg.obj" "./rfWakeOnRadioTx.obj" "./smartrf_settings/smartrf_settings.obj" "../CC1310_LAUNCHXL.cmd" -l"configPkg/linker.cmd" -l"/Applications/ti/tirtos_cc13xx_cc26xx_2_21_00_06/products/cc13xxware_2_04_03_17272/driverlib/bin/ccs/driverlib.lib" -llibc.a 
