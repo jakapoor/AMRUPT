@@ -1,3 +1,13 @@
+/* ===========================================================================
+* Code Composer Studio Version:
+*       7.3.0.00019
+* Edited:
+*       12/27/17 (nds64)
+* TODO:
+*       Line 240
+*       Line 393
+#       Line 408
+* ==========================================================================*/
 /*
  * Copyright (c) 2016, Texas Instruments Incorporated
  * All rights reserved.
@@ -55,7 +65,7 @@
 
 /***** Defines *****/
 /* Wake-on-Radio wakeups per second */
-#define WOR_WAKEUPS_PER_SECOND  2
+#define WOR_WAKEUPS_PER_SECOND  0.2
 
 /* Wake-on-Radio mode. Can be:
  * - RSSI only
@@ -223,12 +233,15 @@ static void rxTaskFunction(UArg arg0, UArg arg1)
     /* Set frequency */
     RF_runCmd(rfHandle, (RF_Op*)&RF_cmdFs, RF_PriorityNormal, &callback, 0);
 
-    /* Save the current radio time */
-    RF_cmdPropRxSniff.startTime = RF_getCurrentTime();
-
     /* Enter main loop */
     while(1)
     {
+        /* Save the current radio time */
+        RF_cmdPropRxSniff.startTime = RF_getCurrentTime();
+
+    /* ===========================================================================
+     * TODO: Setup next wakeup time depending on preprogrammed transmission time - nds64
+     * ==========================================================================*/
         /* Set next wakeup time in the future */
         RF_cmdPropRxSniff.startTime += WOR_WAKE_UP_INTERVAL_RAT_TICKS(WOR_WAKEUPS_PER_SECOND);
 
@@ -378,6 +391,9 @@ void callback(RF_Handle h, RF_CmdHandle ch, RF_EventMask e)
             packetLength      = *(uint8_t*)(&currentDataEntry->data);
             packetDataPointer = (uint8_t*)(&currentDataEntry->data + 1);
 
+        /* ===========================================================================
+         * TODO: Read in payload information (Checksum, Global Time, etc) - nds64
+         * ==========================================================================*/
             /* This code block is added to avoid a compiler warning.
             * Normally, an application will reference these variables for
             * useful data. */
@@ -385,10 +401,17 @@ void callback(RF_Handle h, RF_CmdHandle ch, RF_EventMask e)
             dummy = packetLength;
             dummy = dummy + packetDataPointer[0];
 
+            /* Update time with payload */
+            RF_cmdPropRxSniff.startTime = packetDataPointer[1];
+        /* ==========================================================================*/
+
+        /* ===========================================================================
+         * TODO: Add in support for three commands: default, sleep, special - nds64
+         * ==========================================================================*/    
+
         } while(RFQueue_nextEntry() == DATA_ENTRY_FINISHED);
     }
 }
-
 
 /*
  *  ======== main ========

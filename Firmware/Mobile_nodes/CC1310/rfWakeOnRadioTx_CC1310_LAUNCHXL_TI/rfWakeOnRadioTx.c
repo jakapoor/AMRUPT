@@ -1,3 +1,11 @@
+/* ===========================================================================
+* Code Composer Studio Version:
+*       7.3.0.00019
+* Edited:
+*       12/27/17 (nds64)
+* TODO:
+*       Line 206
+* ==========================================================================*/
 /*
  * Copyright (c) 2016, Texas Instruments Incorporated
  * All rights reserved.
@@ -55,7 +63,7 @@
 
 /***** Defines *****/
 /* Wake-on-Radio configuration */
-#define WOR_WAKEUPS_PER_SECOND 2
+#define WOR_WAKEUPS_PER_SECOND 0.2
 
 /* TX number of random payload bytes */
 #define PAYLOAD_LENGTH 30
@@ -195,22 +203,23 @@ static void txTaskFunction(UArg arg0, UArg arg1)
         /* Wait for a button press */
         Semaphore_pend(txSemaphoreHandle, BIOS_WAIT_FOREVER);
 
+
+    /* ===========================================================================
+     * TODO: Add in payload information (Checksum, Global Time, etc) - nds64
+     * ==========================================================================*/
         /* Create packet with incrementing sequence number and random payload */
         packet[0] = PAYLOAD_LENGTH;
-        packet[1] = (uint8_t)(seqNumber >> 8);
-        packet[2] = (uint8_t)(seqNumber++);
+        packet[1] = (uint8_t)(seqNumber++);
+        packet[2] = (uint8_t)(RF_getCurrentTime());
         uint8_t i;
         for (i = 3; i < PAYLOAD_LENGTH +1; i++)
         {
             packet[i] = rand();
         }
+    /* ==========================================================================*/x
 
         /* Send packet */
         RF_runCmd(rfHandle, (RF_Op*)&RF_cmdPropTxAdv, RF_PriorityNormal, NULL, 0);
-
-        /* Update display */
-        Display_print1(uartDisplayHandle, 0, 0, "Pkts sent: %u", seqNumber);
-        Display_print1(lcdDisplayHandle, 1, 0, "Pkts sent: %u", seqNumber);
 
         /* Toggle LED */
         PIN_setOutputValue(ledPinHandle, Board_LED1, !PIN_getOutputValue(Board_LED1));
