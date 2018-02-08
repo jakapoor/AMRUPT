@@ -1,1 +1,0 @@
-   outdoorAngleFinder_acc.c 
