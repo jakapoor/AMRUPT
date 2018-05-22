@@ -1,0 +1,4 @@
+rtl_sdr -d0 -f 1125000000 -g 35 -s 2500000 -n 50000000 -N FMcapture0-2.dat & 
+rtl_sdr -d1 -f 1125000000 -g 35 -s 2500000 -n 50000000 -N FMcapture1-2.dat &
+rtl_sdr -d2 -f 1125000000 -g 35 -s 2500000 -n 50000000 -N FMcapture2-2.dat & 
+rtl_sdr -d2 -f 1125000000 -g 35 -s 2500000 -n 50000000 -N FMcapture2-2.dat &
