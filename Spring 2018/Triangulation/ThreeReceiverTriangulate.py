@@ -20,7 +20,7 @@ class Coordinate:
         return center
 
     #Parameters are decimal angle of arrivals calculated at #each base station and coordinate positions of each #base station.
-    def triangulated area (angle_of_arrival1, angle_of_arrival2, angle_of_arrival3, receiver1, receiver 2, receiver3):
+    def triangulated area (angle_of_arrival1, angle_of_arrival2, angle_of_arrival3, receiver1, receiver2, receiver3):
         #Converts angle degrees to slope
         slope1 = math.tan(angle_of_arrival1) 
         slope2 = math.tan(angle_of_arrival2)
