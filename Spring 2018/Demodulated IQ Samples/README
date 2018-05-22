@@ -1,0 +1,2 @@
+You can write demodulated I/Q samples from the coherent receiver to a file in Ubuntu Terminal using this code.
+This code is written to support I/Q data extraction among multiple receivers in parallel.
