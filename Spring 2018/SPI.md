@@ -25,6 +25,9 @@ GND     P1-25   P1-26    CE1
 ```
 
 <a name="software"></a>
+## Raspberry Pi SPI and I2C Tutorial
+https://learn.sparkfun.com/tutorials/raspberry-pi-spi-and-i2c-tutorial
+
 ## Software
 
 ### WiringPi
