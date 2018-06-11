@@ -1,0 +1,1 @@
+This folder contains the README file SPI.md which provides an overview of SPI, an embedded bus protocol commonly used to send data between microcontrollers and small peripheral devices. We intend to use SPI in the datalogging of timestamped radio tag positions.
