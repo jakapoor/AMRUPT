@@ -1,4 +1,4 @@
-A temporary folder containing all of the software used for Summer 2018 (will be put into respective subfolders later). 
+A temporary folder containing all of the ground node software used for Summer 2018 (will be put into respective subfolders later). 
 
 cc-tests performs two cross correlations at different windows (the window values were changed during testing) in order to test the synchronicity of data streams after cross correlation. cc-tests only does post-processing for a finite sampling period. 
 
