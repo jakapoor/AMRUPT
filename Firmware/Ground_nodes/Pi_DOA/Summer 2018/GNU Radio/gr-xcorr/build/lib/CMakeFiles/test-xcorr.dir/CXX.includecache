@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/gr-xcorr/lib/qa_xcorr.cc
+qa_xcorr.h
+/home/pi/gr-xcorr/lib/qa_xcorr.h
+
+/home/pi/gr-xcorr/lib/qa_xcorr.h
+gnuradio/attributes.h
+-
+cppunit/TestSuite.h
+-
+
+/home/pi/gr-xcorr/lib/test_xcorr.cc
+config.h
+/home/pi/gr-xcorr/lib/config.h
+cppunit/TextTestRunner.h
+-
+cppunit/XmlOutputter.h
+-
+gnuradio/unittests.h
+-
+qa_xcorr.h
+/home/pi/gr-xcorr/lib/qa_xcorr.h
+iostream
+-
+fstream
+-
+
