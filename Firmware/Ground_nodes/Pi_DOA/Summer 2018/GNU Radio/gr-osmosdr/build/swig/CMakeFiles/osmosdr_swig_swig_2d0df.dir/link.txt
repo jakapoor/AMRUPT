@@ -1,0 +1,1 @@
+/usr/bin/c++   -O3 -DNDEBUG   CMakeFiles/osmosdr_swig_swig_2d0df.dir/osmosdr_swig_swig_2d0df.cpp.o  -o osmosdr_swig_swig_2d0df -rdynamic 

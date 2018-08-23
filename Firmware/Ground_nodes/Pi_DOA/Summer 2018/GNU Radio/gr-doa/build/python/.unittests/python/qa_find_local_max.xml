@@ -1,0 +1,20 @@
+<testsuite errors="2" failures="0" name="unittest.suite.TestSuite" tests="2" time="2.531">
+  <testcase classname="__main__.qa_find_local_max" name="test_001_t" time="1.3011">
+    <error type="exceptions.ValueError">too many values to unpack
+  File "/usr/lib/python2.7/unittest/case.py", line 329, in run
+    testMethod()
+  File "/home/pi/gr-doa/python/qa_find_local_max.py", line 47, in test_001_t
+    data, expected_pks, expected_t_pks = oc.test001_findpeaks(self.num_max_vals, self.vector_len)
+    </error>
+  </testcase>
+  <testcase classname="__main__.qa_find_local_max" name="test_002_t" time="1.2289">
+    <error type="exceptions.ValueError">too many values to unpack
+  File "/usr/lib/python2.7/unittest/case.py", line 329, in run
+    testMethod()
+  File "/home/pi/gr-doa/python/qa_find_local_max.py", line 83, in test_002_t
+    data, expected_pks, expected_t_pks = oc.test002_findpeaks(self.num_max_vals, self.vector_len)
+    </error>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

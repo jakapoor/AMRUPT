@@ -1,0 +1,111 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/pi/gr-osmosdr/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c3ecd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c3ecd.dir/build.make CMakeFiles/cmTC_c3ecd.dir/build
+make[1]: Entering directory '/home/pi/gr-osmosdr/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c3ecd.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_c3ecd.dir/CheckSymbolExists.c.o   -c /home/pi/gr-osmosdr/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_c3ecd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c3ecd.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_c3ecd.dir/CheckSymbolExists.c.o  -o cmTC_c3ecd -rdynamic 
+CMakeFiles/cmTC_c3ecd.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x38): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_c3ecd.dir/build.make:97: recipe for target 'cmTC_c3ecd' failed
+make[1]: *** [cmTC_c3ecd] Error 1
+make[1]: Leaving directory '/home/pi/gr-osmosdr/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_c3ecd/fast' failed
+make: *** [cmTC_c3ecd/fast] Error 2
+
+File /home/pi/gr-osmosdr/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/pi/gr-osmosdr/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_165ca/fast"
+/usr/bin/make -f CMakeFiles/cmTC_165ca.dir/build.make CMakeFiles/cmTC_165ca.dir/build
+make[1]: Entering directory '/home/pi/gr-osmosdr/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_165ca.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_165ca.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.7/Modules/CheckFunctionExists.c
+Linking C executable cmTC_165ca
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_165ca.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_165ca.dir/CheckFunctionExists.c.o  -o cmTC_165ca -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_165ca.dir/build.make:97: recipe for target 'cmTC_165ca' failed
+make[1]: *** [cmTC_165ca] Error 1
+make[1]: Leaving directory '/home/pi/gr-osmosdr/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_165ca/fast' failed
+make: *** [cmTC_165ca/fast] Error 2
+
+
+Performing C++ SOURCE FILE Test HAVE_MACH_ABSOLUTE_TIME failed with the following output:
+Change Dir: /home/pi/gr-osmosdr/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b74dc/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b74dc.dir/build.make CMakeFiles/cmTC_b74dc.dir/build
+make[1]: Entering directory '/home/pi/gr-osmosdr/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_b74dc.dir/src.cxx.o
+/usr/bin/c++     -DHAVE_MACH_ABSOLUTE_TIME   -o CMakeFiles/cmTC_b74dc.dir/src.cxx.o -c /home/pi/gr-osmosdr/build/CMakeFiles/CMakeTmp/src.cxx
+/home/pi/gr-osmosdr/build/CMakeFiles/CMakeTmp/src.cxx:2:32: fatal error: mach/mach_time.h: No such file or directory
+     #include <mach/mach_time.h>
+                                ^
+compilation terminated.
+CMakeFiles/cmTC_b74dc.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_b74dc.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_b74dc.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/pi/gr-osmosdr/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_b74dc/fast' failed
+make: *** [cmTC_b74dc/fast] Error 2
+
+Source file was:
+
+    #include <mach/mach_time.h>
+    int main(){
+        mach_timebase_info_data_t info;
+        mach_timebase_info(&info);
+        mach_absolute_time();
+        return 0;
+    }
+    
+Performing C++ SOURCE FILE Test HAVE_QUERY_PERFORMANCE_COUNTER failed with the following output:
+Change Dir: /home/pi/gr-osmosdr/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c4d84/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c4d84.dir/build.make CMakeFiles/cmTC_c4d84.dir/build
+make[1]: Entering directory '/home/pi/gr-osmosdr/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_c4d84.dir/src.cxx.o
+/usr/bin/c++     -DHAVE_QUERY_PERFORMANCE_COUNTER   -o CMakeFiles/cmTC_c4d84.dir/src.cxx.o -c /home/pi/gr-osmosdr/build/CMakeFiles/CMakeTmp/src.cxx
+/home/pi/gr-osmosdr/build/CMakeFiles/CMakeTmp/src.cxx:2:25: fatal error: Windows.h: No such file or directory
+     #include <Windows.h>
+                         ^
+compilation terminated.
+CMakeFiles/cmTC_c4d84.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_c4d84.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_c4d84.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/pi/gr-osmosdr/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_c4d84/fast' failed
+make: *** [cmTC_c4d84/fast] Error 2
+
+Source file was:
+
+    #include <Windows.h>
+    int main(){
+        LARGE_INTEGER value;
+        QueryPerformanceCounter(&value);
+        QueryPerformanceFrequency(&value);
+        return 0;
+    }
+    

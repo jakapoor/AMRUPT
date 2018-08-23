@@ -1,0 +1,271 @@
+Start testing: Aug 14 00:52 UTC
+----------------------------------------------------------
+1/5 Testing: qa_autocorrelate
+1/5 Test: qa_autocorrelate
+Command: "/bin/sh" "/home/pi/gr-doa/build/python/qa_autocorrelate_test.sh"
+Directory: /home/pi/gr-doa/build/python
+"qa_autocorrelate" start time: Aug 14 00:52 UTC
+Output:
+----------------------------------------------------------
+EEE
+======================================================================
+ERROR: test_001_t (__main__.qa_autocorrelate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pi/gr-doa/python/qa_autocorrelate.py", line 54, in test_001_t
+    [expected_S_x, data] = oc.doa_testbench_create('autocorrelate_test_input_gen', len_ss, overlap_size, num_inputs, FB)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/dynamic.py", line 96, in __call__
+    return self._ref().feval(self.name, *inputs, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 369, in feval
+    store_as=store_as, plot_dir=plot_dir)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 568, in _feval
+    raise Oct2PyError(msg)
+Oct2PyError: Octave evaluation error:
+error: binary operator '/' not implemented for 'float complex matrix' by 'int32 scalar' operations
+
+======================================================================
+ERROR: test_002_t (__main__.qa_autocorrelate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pi/gr-doa/python/qa_autocorrelate.py", line 100, in test_002_t
+    [expected_S_x, data] = oc.doa_testbench_create('autocorrelate_test_input_gen', len_ss, overlap_size, num_inputs, FB)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/dynamic.py", line 96, in __call__
+    return self._ref().feval(self.name, *inputs, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 369, in feval
+    store_as=store_as, plot_dir=plot_dir)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 568, in _feval
+    raise Oct2PyError(msg)
+Oct2PyError: Octave evaluation error:
+error: binary operator '/' not implemented for 'float complex matrix' by 'int32 scalar' operations
+
+======================================================================
+ERROR: test_003_t (__main__.qa_autocorrelate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pi/gr-doa/python/qa_autocorrelate.py", line 146, in test_003_t
+    [expected_S_x, data] = oc.doa_testbench_create('autocorrelate_test_input_gen', len_ss, overlap_size, num_inputs, FB)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/dynamic.py", line 96, in __call__
+    return self._ref().feval(self.name, *inputs, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 369, in feval
+    store_as=store_as, plot_dir=plot_dir)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 568, in _feval
+    raise Oct2PyError(msg)
+Oct2PyError: Octave evaluation error:
+error: binary operator '/' not implemented for 'float complex matrix' by 'int32 scalar' operations
+
+----------------------------------------------------------------------
+Ran 3 tests in 11.335s
+
+FAILED (errors=3)
+<oct2py.core.Oct2Py object at 0x69b16d50>
+<oct2py.core.Oct2Py object at 0x69b2fef0>
+<end of output>
+Test time =  31.75 sec
+----------------------------------------------------------
+Test Failed.
+"qa_autocorrelate" end time: Aug 14 00:52 UTC
+"qa_autocorrelate" time elapsed: 00:00:31
+----------------------------------------------------------
+
+2/5 Testing: qa_MUSIC_lin_array
+2/5 Test: qa_MUSIC_lin_array
+Command: "/bin/sh" "/home/pi/gr-doa/build/python/qa_MUSIC_lin_array_test.sh"
+Directory: /home/pi/gr-doa/build/python
+"qa_MUSIC_lin_array" start time: Aug 14 00:52 UTC
+Output:
+----------------------------------------------------------
+EE
+======================================================================
+ERROR: test_001_MUSIC_aoa23 (__main__.qa_MUSIC_lin_array)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pi/gr-doa/python/qa_MUSIC_lin_array.py", line 67, in test_001_MUSIC_aoa23
+    music_linear_input = oc.doa_testbench_create('music_test_input_gen', len_ss, overlap_size, num_arr_ele, FB, 'linear', num_arr_ele, norm_spacing, PERTURB, expected_aoa)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/dynamic.py", line 96, in __call__
+    return self._ref().feval(self.name, *inputs, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 369, in feval
+    store_as=store_as, plot_dir=plot_dir)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 568, in _feval
+    raise Oct2PyError(msg)
+Oct2PyError: Octave evaluation error:
+error: A(I,J,...) = X: dimensions mismatch
+
+======================================================================
+ERROR: test_002_MUSIC_aoa121 (__main__.qa_MUSIC_lin_array)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pi/gr-doa/python/qa_MUSIC_lin_array.py", line 123, in test_002_MUSIC_aoa121
+    music_linear_input = oc.doa_testbench_create('music_test_input_gen', len_ss, overlap_size, num_arr_ele, FB, 'linear', num_arr_ele, norm_spacing, PERTURB, expected_aoa)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/dynamic.py", line 96, in __call__
+    return self._ref().feval(self.name, *inputs, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 369, in feval
+    store_as=store_as, plot_dir=plot_dir)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 568, in _feval
+    raise Oct2PyError(msg)
+Oct2PyError: Octave evaluation error:
+error: A(I,J,...) = X: dimensions mismatch
+
+----------------------------------------------------------------------
+Ran 2 tests in 1.906s
+
+FAILED (errors=2)
+<end of output>
+Test time =   9.58 sec
+----------------------------------------------------------
+Test Failed.
+"qa_MUSIC_lin_array" end time: Aug 14 00:52 UTC
+"qa_MUSIC_lin_array" time elapsed: 00:00:09
+----------------------------------------------------------
+
+3/5 Testing: qa_rootMUSIC_linear_array
+3/5 Test: qa_rootMUSIC_linear_array
+Command: "/bin/sh" "/home/pi/gr-doa/build/python/qa_rootMUSIC_linear_array_test.sh"
+Directory: /home/pi/gr-doa/build/python
+"qa_rootMUSIC_linear_array" start time: Aug 14 00:52 UTC
+Output:
+----------------------------------------------------------
+EE
+======================================================================
+ERROR: test_001_rootMUSIC_aoa23 (__main__.qa_rootMUSIC)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pi/gr-doa/python/qa_rootMUSIC_linear_array.py", line 62, in test_001_rootMUSIC_aoa23
+    rootmusic_linear_input = oc.doa_testbench_create('music_test_input_gen', len_ss, overlap_size, num_arr_ele, FB, 'linear', num_arr_ele, norm_spacing, PERTURB, expected_aoa)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/dynamic.py", line 96, in __call__
+    return self._ref().feval(self.name, *inputs, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 369, in feval
+    store_as=store_as, plot_dir=plot_dir)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 568, in _feval
+    raise Oct2PyError(msg)
+Oct2PyError: Octave evaluation error:
+error: A(I,J,...) = X: dimensions mismatch
+
+======================================================================
+ERROR: test_002_rootMUSIC_aoa52 (__main__.qa_rootMUSIC)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pi/gr-doa/python/qa_rootMUSIC_linear_array.py", line 115, in test_002_rootMUSIC_aoa52
+    rootmusic_linear_input = oc.doa_testbench_create('music_test_input_gen', len_ss, overlap_size, num_arr_ele, FB, 'linear', num_arr_ele, norm_spacing, PERTURB, expected_aoa)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/dynamic.py", line 96, in __call__
+    return self._ref().feval(self.name, *inputs, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 369, in feval
+    store_as=store_as, plot_dir=plot_dir)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 568, in _feval
+    raise Oct2PyError(msg)
+Oct2PyError: Octave evaluation error:
+error: A(I,J,...) = X: dimensions mismatch
+
+----------------------------------------------------------------------
+Ran 2 tests in 1.825s
+
+FAILED (errors=2)
+<end of output>
+Test time =   8.96 sec
+----------------------------------------------------------
+Test Failed.
+"qa_rootMUSIC_linear_array" end time: Aug 14 00:52 UTC
+"qa_rootMUSIC_linear_array" time elapsed: 00:00:08
+----------------------------------------------------------
+
+4/5 Testing: qa_find_local_max
+4/5 Test: qa_find_local_max
+Command: "/bin/sh" "/home/pi/gr-doa/build/python/qa_find_local_max_test.sh"
+Directory: /home/pi/gr-doa/build/python
+"qa_find_local_max" start time: Aug 14 00:52 UTC
+Output:
+----------------------------------------------------------
+EE
+======================================================================
+ERROR: test_001_t (__main__.qa_find_local_max)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pi/gr-doa/python/qa_find_local_max.py", line 47, in test_001_t
+    data, expected_pks, expected_t_pks = oc.test001_findpeaks(self.num_max_vals, self.vector_len)
+ValueError: too many values to unpack
+
+======================================================================
+ERROR: test_002_t (__main__.qa_find_local_max)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pi/gr-doa/python/qa_find_local_max.py", line 83, in test_002_t
+    data, expected_pks, expected_t_pks = oc.test002_findpeaks(self.num_max_vals, self.vector_len)
+ValueError: too many values to unpack
+
+----------------------------------------------------------------------
+Ran 2 tests in 2.373s
+
+FAILED (errors=2)
+<end of output>
+Test time =  10.09 sec
+----------------------------------------------------------
+Test Failed.
+"qa_find_local_max" end time: Aug 14 00:53 UTC
+"qa_find_local_max" time elapsed: 00:00:10
+----------------------------------------------------------
+
+5/5 Testing: qa_calibrate_lin_array
+5/5 Test: qa_calibrate_lin_array
+Command: "/bin/sh" "/home/pi/gr-doa/build/python/qa_calibrate_lin_array_test.sh"
+Directory: /home/pi/gr-doa/build/python
+"qa_calibrate_lin_array" start time: Aug 14 00:53 UTC
+Output:
+----------------------------------------------------------
+EEE
+======================================================================
+ERROR: test_001_t (__main__.qa_calibrate_lin_array)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pi/gr-doa/python/qa_calibrate_lin_array.py", line 59, in test_001_t
+    S_x, S_x_uncalibrated, ant_pert_vec = oc.doa_testbench_create('music_test_input_gen', len_ss, overlap_size, num_ant_ele, FB, 'linear', num_ant_ele, norm_spacing, PERTURB, pilot_doa)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/dynamic.py", line 96, in __call__
+    return self._ref().feval(self.name, *inputs, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 369, in feval
+    store_as=store_as, plot_dir=plot_dir)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 568, in _feval
+    raise Oct2PyError(msg)
+Oct2PyError: Octave evaluation error:
+error: operator *: nonconformant arguments (op1 is 4x4, op2 is 5x1)
+
+======================================================================
+ERROR: test_002_t (__main__.qa_calibrate_lin_array)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pi/gr-doa/python/qa_calibrate_lin_array.py", line 114, in test_002_t
+    S_x, S_x_uncalibrated, ant_pert_vec = oc.doa_testbench_create('music_test_input_gen', len_ss, overlap_size, num_ant_ele, FB, 'linear', num_ant_ele, norm_spacing, PERTURB, pilot_doa)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/dynamic.py", line 96, in __call__
+    return self._ref().feval(self.name, *inputs, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 369, in feval
+    store_as=store_as, plot_dir=plot_dir)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 568, in _feval
+    raise Oct2PyError(msg)
+Oct2PyError: Octave evaluation error:
+error: operator *: nonconformant arguments (op1 is 8x8, op2 is 9x1)
+
+======================================================================
+ERROR: test_003_t (__main__.qa_calibrate_lin_array)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pi/gr-doa/python/qa_calibrate_lin_array.py", line 169, in test_003_t
+    S_x, S_x_uncalibrated, ant_pert_vec = oc.doa_testbench_create('music_test_input_gen', len_ss, overlap_size, num_ant_ele, FB, 'linear', num_ant_ele, norm_spacing, PERTURB, pilot_doa)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/dynamic.py", line 96, in __call__
+    return self._ref().feval(self.name, *inputs, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 369, in feval
+    store_as=store_as, plot_dir=plot_dir)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 568, in _feval
+    raise Oct2PyError(msg)
+Oct2PyError: Octave evaluation error:
+error: operator *: nonconformant arguments (op1 is 4x4, op2 is 5x1)
+
+----------------------------------------------------------------------
+Ran 3 tests in 2.788s
+
+FAILED (errors=3)
+<end of output>
+Test time =  10.99 sec
+----------------------------------------------------------
+Test Failed.
+"qa_calibrate_lin_array" end time: Aug 14 00:53 UTC
+"qa_calibrate_lin_array" time elapsed: 00:00:10
+----------------------------------------------------------
+
+End testing: Aug 14 00:53 UTC

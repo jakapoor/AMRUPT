@@ -1,0 +1,49 @@
+<testsuite errors="3" failures="0" name="unittest.suite.TestSuite" tests="3" time="11.247">
+  <testcase classname="__main__.qa_autocorrelate" name="test_001_t" time="4.8792">
+    <error type="oct2py.utils.Oct2PyError">Octave evaluation error:
+error: binary operator '/' not implemented for 'float complex matrix' by 'int32 scalar' operations
+  File "/usr/lib/python2.7/unittest/case.py", line 329, in run
+    testMethod()
+  File "/home/pi/gr-doa/python/qa_autocorrelate.py", line 54, in test_001_t
+    [expected_S_x, data] = oc.doa_testbench_create('autocorrelate_test_input_gen', len_ss, overlap_size, num_inputs, FB)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/dynamic.py", line 96, in __call__
+    return self._ref().feval(self.name, *inputs, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 369, in feval
+    store_as=store_as, plot_dir=plot_dir)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 568, in _feval
+    raise Oct2PyError(msg)
+    </error>
+  </testcase>
+  <testcase classname="__main__.qa_autocorrelate" name="test_002_t" time="4.8519">
+    <error type="oct2py.utils.Oct2PyError">Octave evaluation error:
+error: binary operator '/' not implemented for 'float complex matrix' by 'int32 scalar' operations
+  File "/usr/lib/python2.7/unittest/case.py", line 329, in run
+    testMethod()
+  File "/home/pi/gr-doa/python/qa_autocorrelate.py", line 100, in test_002_t
+    [expected_S_x, data] = oc.doa_testbench_create('autocorrelate_test_input_gen', len_ss, overlap_size, num_inputs, FB)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/dynamic.py", line 96, in __call__
+    return self._ref().feval(self.name, *inputs, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 369, in feval
+    store_as=store_as, plot_dir=plot_dir)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 568, in _feval
+    raise Oct2PyError(msg)
+    </error>
+  </testcase>
+  <testcase classname="__main__.qa_autocorrelate" name="test_003_t" time="1.5151">
+    <error type="oct2py.utils.Oct2PyError">Octave evaluation error:
+error: binary operator '/' not implemented for 'float complex matrix' by 'int32 scalar' operations
+  File "/usr/lib/python2.7/unittest/case.py", line 329, in run
+    testMethod()
+  File "/home/pi/gr-doa/python/qa_autocorrelate.py", line 146, in test_003_t
+    [expected_S_x, data] = oc.doa_testbench_create('autocorrelate_test_input_gen', len_ss, overlap_size, num_inputs, FB)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/dynamic.py", line 96, in __call__
+    return self._ref().feval(self.name, *inputs, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 369, in feval
+    store_as=store_as, plot_dir=plot_dir)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 568, in _feval
+    raise Oct2PyError(msg)
+    </error>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

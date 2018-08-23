@@ -1,0 +1,34 @@
+<testsuite errors="2" failures="0" name="unittest.suite.TestSuite" tests="2" time="2.035">
+  <testcase classname="__main__.qa_MUSIC_lin_array" name="test_001_MUSIC_aoa23" time="1.1035">
+    <error type="oct2py.utils.Oct2PyError">Octave evaluation error:
+error: A(I,J,...) = X: dimensions mismatch
+  File "/usr/lib/python2.7/unittest/case.py", line 329, in run
+    testMethod()
+  File "/home/pi/gr-doa/python/qa_MUSIC_lin_array.py", line 67, in test_001_MUSIC_aoa23
+    music_linear_input = oc.doa_testbench_create('music_test_input_gen', len_ss, overlap_size, num_arr_ele, FB, 'linear', num_arr_ele, norm_spacing, PERTURB, expected_aoa)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/dynamic.py", line 96, in __call__
+    return self._ref().feval(self.name, *inputs, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 369, in feval
+    store_as=store_as, plot_dir=plot_dir)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 568, in _feval
+    raise Oct2PyError(msg)
+    </error>
+  </testcase>
+  <testcase classname="__main__.qa_MUSIC_lin_array" name="test_002_MUSIC_aoa121" time="0.9311">
+    <error type="oct2py.utils.Oct2PyError">Octave evaluation error:
+error: A(I,J,...) = X: dimensions mismatch
+  File "/usr/lib/python2.7/unittest/case.py", line 329, in run
+    testMethod()
+  File "/home/pi/gr-doa/python/qa_MUSIC_lin_array.py", line 123, in test_002_MUSIC_aoa121
+    music_linear_input = oc.doa_testbench_create('music_test_input_gen', len_ss, overlap_size, num_arr_ele, FB, 'linear', num_arr_ele, norm_spacing, PERTURB, expected_aoa)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/dynamic.py", line 96, in __call__
+    return self._ref().feval(self.name, *inputs, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 369, in feval
+    store_as=store_as, plot_dir=plot_dir)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 568, in _feval
+    raise Oct2PyError(msg)
+    </error>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
