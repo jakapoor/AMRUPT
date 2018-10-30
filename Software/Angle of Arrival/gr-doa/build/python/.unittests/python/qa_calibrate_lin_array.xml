@@ -1,0 +1,49 @@
+<testsuite errors="3" failures="0" name="unittest.suite.TestSuite" tests="3" time="2.444">
+  <testcase classname="__main__.qa_calibrate_lin_array" name="test_001_t" time="0.8215">
+    <error type="oct2py.utils.Oct2PyError">Octave evaluation error:
+error: operator *: nonconformant arguments (op1 is 4x4, op2 is 5x1)
+  File "/usr/lib/python2.7/unittest/case.py", line 329, in run
+    testMethod()
+  File "/home/pi/gr-doa/python/qa_calibrate_lin_array.py", line 59, in test_001_t
+    S_x, S_x_uncalibrated, ant_pert_vec = oc.doa_testbench_create('music_test_input_gen', len_ss, overlap_size, num_ant_ele, FB, 'linear', num_ant_ele, norm_spacing, PERTURB, pilot_doa)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/dynamic.py", line 96, in __call__
+    return self._ref().feval(self.name, *inputs, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 369, in feval
+    store_as=store_as, plot_dir=plot_dir)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 568, in _feval
+    raise Oct2PyError(msg)
+    </error>
+  </testcase>
+  <testcase classname="__main__.qa_calibrate_lin_array" name="test_002_t" time="0.8003">
+    <error type="oct2py.utils.Oct2PyError">Octave evaluation error:
+error: operator *: nonconformant arguments (op1 is 8x8, op2 is 9x1)
+  File "/usr/lib/python2.7/unittest/case.py", line 329, in run
+    testMethod()
+  File "/home/pi/gr-doa/python/qa_calibrate_lin_array.py", line 114, in test_002_t
+    S_x, S_x_uncalibrated, ant_pert_vec = oc.doa_testbench_create('music_test_input_gen', len_ss, overlap_size, num_ant_ele, FB, 'linear', num_ant_ele, norm_spacing, PERTURB, pilot_doa)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/dynamic.py", line 96, in __call__
+    return self._ref().feval(self.name, *inputs, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 369, in feval
+    store_as=store_as, plot_dir=plot_dir)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 568, in _feval
+    raise Oct2PyError(msg)
+    </error>
+  </testcase>
+  <testcase classname="__main__.qa_calibrate_lin_array" name="test_003_t" time="0.8217">
+    <error type="oct2py.utils.Oct2PyError">Octave evaluation error:
+error: operator *: nonconformant arguments (op1 is 4x4, op2 is 5x1)
+  File "/usr/lib/python2.7/unittest/case.py", line 329, in run
+    testMethod()
+  File "/home/pi/gr-doa/python/qa_calibrate_lin_array.py", line 169, in test_003_t
+    S_x, S_x_uncalibrated, ant_pert_vec = oc.doa_testbench_create('music_test_input_gen', len_ss, overlap_size, num_ant_ele, FB, 'linear', num_ant_ele, norm_spacing, PERTURB, pilot_doa)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/dynamic.py", line 96, in __call__
+    return self._ref().feval(self.name, *inputs, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 369, in feval
+    store_as=store_as, plot_dir=plot_dir)
+  File "/usr/local/lib/python2.7/dist-packages/oct2py/core.py", line 568, in _feval
+    raise Oct2PyError(msg)
+    </error>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
