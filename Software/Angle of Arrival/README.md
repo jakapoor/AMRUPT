@@ -20,3 +20,4 @@ gr-doa: library modified from Ettus Research gr-doa repository - https://github.
 gr-xcorr: library modified from Sam Whiting's gr-doa repository - https://github.com/samwhiting/gnuradio-doa/tree/master/gr-doa 
 gr-osmosdr: library modified from Osmocom's gr-osmosdr repository - https://github.com/osmocom/gr-osmosdr 
 
+Software heavily based on the work documented here - https://coherent-receiver.com/getting-started
