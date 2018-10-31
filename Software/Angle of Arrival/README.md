@@ -2,7 +2,7 @@ This folder includes a general overview of the latest software implemented for t
 
 IMPORTANT: THE FILES IN THIS FOLDER SHOULD BY NO MEANS BE USED DIRECTLY. These files are here to help explain the software, they cannot be downloaded and just ran like a stand-alone python program. In order to use these programs, load the flowchart in GNU Radio from a Raspberry Pi loaded with the OS Image "AMRUPT Raspbian." This image file is included in this folder as "AMRUPT Raspbian." Instructions for loading an OS image to the Raspberry Pi can be accessed in the following link - https://www.raspberrypi.org/documentation/installation/installing-images/. 
 
-===============================GNU Radio==============================================
+#H4 GNU Radio
 There are many resources to get started with GNU Radio. Notable resource here include -
 1. https://wiki.gnuradio.org/index.php/Guided_Tutorial_GRC
 2. https://wiki.gnuradio.org/index.php/OutOfTreeModules
