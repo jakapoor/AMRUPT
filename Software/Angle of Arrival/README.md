@@ -1,11 +1,11 @@
-# H2 Angle of Arrival Software
+## Angle of Arrival Software
 
 This folder includes a general overview of the latest software implemented for the angle of arrival direction finding system. Each subfolder refers to a distinct program/method for generating angle of arrival results at receiver basestations. Currently, the only software implementations that can generate angle of arrival results are implemented in GNU Radio.
 
-# H4 IMPORTANT: 
+### IMPORTANT: 
 THE FILES IN THIS FOLDER SHOULD BY NO MEANS BE USED DIRECTLY. These files are here to help explain the software, they cannot be downloaded and just ran like a stand-alone python program. In order to use these programs, load the flowchart in GNU Radio from a Raspberry Pi loaded with the OS Image "AMRUPT Raspbian." This image file is included in this folder as "AMRUPT Raspbian." Instructions for loading an OS image to the Raspberry Pi can be accessed in the following link - https://www.raspberrypi.org/documentation/installation/installing-images/. 
 
-# H4 GNU Radio
+### GNU Radio
 There are many resources to get started with GNU Radio. Notable resource here include -
 1. https://wiki.gnuradio.org/index.php/Guided_Tutorial_GRC
 2. https://wiki.gnuradio.org/index.php/OutOfTreeModules
@@ -15,7 +15,7 @@ Within each subfolder is a GRC file associated with the flowchart for that progr
 
 Code for the blocks automatically included in GNU Radio (e.g. Add, QT GUI Sink, File Sink) can be seen within the lib folder in the repository https://github.com/gnuradio/gnuradio/tree/master/gr-blocks 
 
-# H4 Modified Repositories
+### Modified Repositories
 gr-doa: library modified from Ettus Research gr-doa repository - https://github.com/EttusResearch/gr-doa
 gr-xcorr: library modified from Sam Whiting's gr-doa repository - https://github.com/samwhiting/gnuradio-doa/tree/master/gr-doa 
 gr-osmosdr: library modified from Osmocom's gr-osmosdr repository - https://github.com/osmocom/gr-osmosdr 
