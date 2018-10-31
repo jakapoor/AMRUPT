@@ -11,9 +11,9 @@ There are many resources to get started with GNU Radio. Notable resource here in
 2. https://wiki.gnuradio.org/index.php/OutOfTreeModules
 3. https://www.gnuradio.org/blog/buffers
 
-Within each subfolder is a GRC file associated with the flowchart for that program. Furthermore, the primary .cc files () associated with each custom block/module in a program is included in the folder with the c file renamed to the corresponding block. This does not include the header, background, and installation programs that are unessential in understanding the software associated with the custom blocks/modules. Such programs can be found in the libraries gr-doa (library for music, subspace-smoothing), gr-xcorr (library for cross-correlation, phase difference calculation), and gr-osmosdr (library for RTL-SDR data extraction). These libraries have also been included here as additional folders accordingly.
+Within each subfolder is a GRC file associated with the flowchart for that program. Furthermore, the primary .cc files associated with each custom block/module in the program are included with the .cc file renamed to the corresponding block. This does not include the header, background, and installation programs that are unessential in understanding the software associated with the custom blocks/modules. Such programs can be found in the libraries gr-doa (library for music, subspace-smoothing), gr-xcorr (library for cross-correlation, phase difference calculation), and gr-osmosdr (library for RTL-SDR data extraction). These libraries have also been included here as additional folders accordingly.
 
-Code for the blocks automatically included in GNU Radio (e.g. Add, QT GUI Sink, File Sink) can be seen within the lib folder in the repository https://github.com/gnuradio/gnuradio/tree/master/gr-blocks 
+Code for the blocks automatically included in GNU Radio (e.g. Add, QT GUI Sink, File Sink, Keep 1 in N, Stream to Vector) can be viewed inside the lib folder in the repository https://github.com/gnuradio/gnuradio/tree/master/gr-blocks 
 
 ### Modified Repositories
 gr-doa: library modified from Ettus Research gr-doa repository - https://github.com/EttusResearch/gr-doa
