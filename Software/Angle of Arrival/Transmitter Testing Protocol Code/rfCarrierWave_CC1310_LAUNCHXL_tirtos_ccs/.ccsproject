@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?ccsproject version="1.0"?>
+<projectOptions>
+	<ccsVersion value="7.4.0"/>
+	<deviceVariant value="Cortex M.CC1310F128"/>
+	<deviceFamily value="TMS470"/>
+	<deviceEndianness value="little"/>
+	<codegenToolVersion value="16.9.6.LTS"/>
+	<isElfFormat value="true"/>
+	<connection value="common/targetdb/connections/TIXDS110_Connection.xml"/>
+	<rts value="libc.a"/>
+	<createSlaveProjects value=""/>
+	<ignoreDefaultDeviceSettings value="true"/>
+	<templateProperties value="id=rfCarrierWave_CC1310_LAUNCHXL_tirtos_ccs.projectspec.rfCarrierWave_CC1310_LAUNCHXL_tirtos_ccs,buildProfile=release,isHybrid=true,"/>
+	<origin value="C:\ti\simplelink_cc13x0_sdk_1_60_00_21\examples\rtos\CC1310_LAUNCHXL\drivers\rfCarrierWave\tirtos\ccs\rfCarrierWave_CC1310_LAUNCHXL_tirtos_ccs.projectspec"/>
+	<filesToOpen value=""/>
+</projectOptions>
