@@ -1,6 +1,6 @@
 ## Outdoor Testing 12/20/2018
 
-####Testing Setup and Protocol
+#### Testing Setup and Protocol
 Today's equipment setup and automatic data retrieval program went smoothly as no programming or visible hardware issues occurred. The commented automatic retrieval program "testingscriptnew.py" correctly logged in angles of arrival at user specified times, without having to reset any part of the system after 90 degree beacon synchronization. The testing for both conventional beamforming and other methods went as followed (person 1 - Russell, person 2 - Professor Skovira): 
 
 1. Person 2 places the CC1310 and its transmitter rig at 90 degrees. Person 2 presses reset on the CC1310.
@@ -14,7 +14,7 @@ Today's equipment setup and automatic data retrieval program went smoothly as no
 9. Person 1 starts data collection for 0 degrees now.
 10. End Trial
 
-####Results
+#### Results
 There were two trials of conventional beamforming and they are specified by the title "2ant0trialx" where the second number in the title refers to the expected angle. The ending numbers listed in the trial titles of other methods also refer to the expected angle.
 
 Conventional Beamforming Results -
@@ -40,5 +40,5 @@ Root MUSIC Results -
 	rootmusic45.txt 	
 	rootmusic90.txt 	
 	
-####Discussion
+#### Discussion
 The results from all the methods tested reflected poorly on the system's accuracy, but demonstrated precision. There were no observations of random bimodal phase shifts after phase synchronization at 90 degrees. Some variations of MUSIC; however, demonstrated large fluctuation between samples for certain angles. I believe the system would benefit from further testing that would monitor how the accuracy of angle of arrival depreciates as the transmitter moves angularly away from 90 degrees at the same receiver-transmitter distance, and whether the error occurs is logarithmic, exponential, etc. as this is happening. Then the software and hardware can be further debugged and improved based on those results.
