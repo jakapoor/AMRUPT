@@ -1,4 +1,4 @@
-## Simulation Tests 3/1/2019
+## Simulation Tests 4/8/2019
 
 #### Testing Setup and Protocol
 The goal of the simulated tests was to test the functionality of the conventional beamforming software to correctly detect angles corresponding to phase differences of simulated radio waves. The tests were first performed with radio waves created from GNU Radio software using the signal source block. Since it was unclear how to set an exact frequency of 433.92 mHz using the signal source GNU Radio block, a sinusoidal wave from a CC1310 was used to provide the source of the simulated radio waves instead. The CC1310 signal would be split into two in-phase/quadrature data channels to provide inputs to the principal component analysis block which computed a phase difference for angle of arrival (AoA) calculation.
