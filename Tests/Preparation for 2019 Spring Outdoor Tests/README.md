@@ -11,7 +11,7 @@ The updated data extraction python code has been uploaded to this folder. The co
 
 The code listed below is used in order to determine the optimal AoA from each antenna pair where data segment a is extracted from antenna pair 1 and data segment b is extracted from antenna pair 2. The code computes the optimal AoA from the mean and variance values of 10-sample segments of AoAs taken from each antenna pair. From the observations of the simulated tests, low simulated angles could cause a high degree of imprecision that could result in a high mean of AoA values. This condition is checked first before checking the means to determine the optimal AoA. If the variance between the antenna pairs is not drastically different, the mean is used to choose the antenna pair with the higher AoA values.
 
-'''
+```
 #Increments through every 10 samples of AoA values from antenna
 #pairs 1 and 2.
 for i in range(len(a)/10):
@@ -42,7 +42,7 @@ for i in range(len(a)/10):
 		np.savetxt(f, a_segment, "%s")
 		f.write ("antenna pair " + str(1) + "\n")
 		f.close()
-'''
+```
 	#Else, decide optimal AoA value solely using the mean values. Higher
 	#AoA values are more likely to be more accurate.
 	elif (a_mean > b_mean):
