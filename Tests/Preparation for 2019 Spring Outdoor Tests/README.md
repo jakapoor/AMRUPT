@@ -42,7 +42,6 @@ for i in range(len(a)/10):
 		np.savetxt(f, a_segment, "%s")
 		f.write ("antenna pair " + str(1) + "\n")
 		f.close()
-```
 	#Else, decide optimal AoA value solely using the mean values. Higher
 	#AoA values are more likely to be more accurate.
 	elif (a_mean > b_mean):
@@ -57,3 +56,4 @@ for i in range(len(a)/10):
 		np.savetxt(f, b_segment, "%s")
 		f.write ("antenna pair " + str(2) + "\n")
 		f.close()
+```
