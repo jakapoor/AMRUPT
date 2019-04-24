@@ -1,23 +1,57 @@
-## Simulation Tests 4/8/2019
+## Preparation for 2019 Outdoor Tests
 
-#### System Improvements
-1. When conducting preliminary simulated tests with the coherent receiver, only some of the bias tees could be activated on the rtl sdrs and the noise source could not be deactivated when powered by the usb hub. These and other new issues never observed before occured during the simulated tests. Fortunately, all of these observed issues were solved by replacing the existing usb multiport hub with a [higher power anker multiport usb hub](https://www.amazon.com/Anker-PowerIQ-Charging-Macbook-Surface/dp/B00VDVCQ84). 
+#### Introduction
+It was concluded that conventional beamforming is more prone to inaccuracy at lower AoAs (<30 degree AoA) from the april simulation tests. To combat this source of inaccuracy, a two-antenna pair system has been proposed. Each antenna pair is perpendicular to each other, so when one antenna pair collects inaccurate AoAs at a low angle (e.g. 0 degrees), the other antenna pairs collects more accurate AoAs at a higher angle (e.g. 90 degrees). Of course there are caveats to this proposal including an increased power consumption and a lower TDMA switching rate (from the requirement to listen to each tagged individaul for a longer time to determine the more optimal antenna pair). For now, I think this is the best approach to demonstrate a proof of concept system which can determine which antenna pair is more accurate. Furthermore, the efficiency and accuracy of this system could be improved in a 3-antenna triangular array. The triangular array is not currently proposed due to the need for triangulation (each antenna pair has a different angular reference). 
 
-2. The conventional beamforming GNU Radio programs and python data extraction program (testingscriptnew.py) were updated to include file sinks to both RTL SDR channels involved, so that AoA values can be recalculated using raw I/Q samples.
+#### Testing Scenario
+Professor Skovira and I are planning to conduct the outdoor tests next week. Three primary tests have been proposed for this date - a two-whip antenna pair conventional beamforming test, a two-rubber ducky antenna pair conventional beamforming test, and a movement test with the type of antenna chosen based on the previous tests. The movement test will consist of one tester running around the transmitter to simulate multipath interference. Some logistics are still being worked out for the tests including whether a sinusoid or PRBS-15 noise signal should be transmitted from the CC1310.
 
-#### Testing Setup and Protocol
-The goal of the simulated tests was to test the functionality of the conventional beamforming software to correctly detect angles corresponding to phase differences of simulated radio waves. The simulated testing setup from [3-1-2019](https://github.com/jakapoor/AMRUPT/tree/master/Tests/3-1-2019%20Simulation%20Tests) was extended to include timing/phase offset correction and compatibility to the coherent receiver setup. 
+#### Updated Data Extraction Python Code
+The updated data extraction python code has been uploaded to this folder. The code generates 9 sections of data: Optimal AoA values chosen by the system, AoA values from antenna pair 1, AoA values from antenna pair 2, phase difference values from antenna pair 1, phase difference values from antenna pair 2, IQ data from receiver 1-antenna pair 1, IQ data from receiver 2-antenna pair 1, IQ data from receiver 1-antenna pair 2, and IQ data from receiver 2-antenna pair 2. The program also generates results from three trials for each section of data and lists the expected angle of arrival from each antenna pair.
 
-A PRBS-15 signal acting as a noise source was sent from a CC1310 into two RTL SDRs on the coherent receiver for timing offset correction. After 20 seconds, the CC1310 would then send a sinusoidal wave to both RTL SDRs for 90 degree simulation following phase offset correction. After the 90 degree simulation, the program would test AoA calculations for 60, 45, 30, and 0 degree simulated angles of arrival. Each simulated angle of arrival would be tested for 20 seconds in order for the python data extraction program to have enough data for each angle.
+The code listed below is used in order to determine the optimal AoA from each antenna pair where data segment a is extracted from antenna pair 1 and data segment b is extracted from antenna pair 2. The code computes the optimal AoA from the mean and variance values of 10-sample segments of AoAs taken from each antenna pair. From the observations of the simulated tests, low simulated angles could cause a high degree of imprecision that could result in a high mean of AoA values. This condition is checked first before checking the means to determine the optimal AoA. If the variance between the antenna pairs is not drastically different, the mean is used to choose the antenna pair with the higher AoA values.
 
-In order to create a phase offset between the split data channels, the Multiply EXP GNU Radio block was used to continuously adjust the phasor of one of the data channels to have a specific phase difference. Phase offset arguments of 3.14159, 2.72070, 2.22144, 1.57080, and 0.00000 radians were used corresponding to 0, 30, 45, 60, and 90 degree angles of arrival respectively. Phase offset arguments were calculated from the AoA formula arccos(phase_difference/(2*pi*alpha)) where alpha is equal to wavelength/antenna_seperation.
-
-#### Results
-Five tests with three trials were performed for each AoA using the sinusoidal signal from the CC1310. In these tests, alpha values used in calculating AoA were adjusted to 0.45, 0.48, 0.5, 0.52, and 0.55 to see how the program would react to inaccuracy in antenna seperation. The results of each test were processed automatically into txt files with names denoting the ExpectedAoAValue (e.g."angle0") and the alpha value (e.g."alpha0_45" for 0.45). In addition, 0.5 alpha tests were performed for each AoA using the PRBS-15 signal from the CC1310. These tests are denoted by "noise" at the end of the test name. Because of the promising results of these tests, the PRBS-15 signal and sinusoidal signal were tested again for a 15 degree angle of arrival for an alpha value of 0.5.
-	
-#### Discussion
-These results show similar levels of accuracy to the 3-1-2019 simulated tests for angles >= 30 degrees, even when alpha values were changed to simulate inexact antenna spacings. However, the 0 degree results show much greater error and imprecision to the 3-1-2019 simulated tests with all alpha values. A possible solution to this in the future would be to discard lower angles of arrival in a triangular array. 
-
-Another observation is that angle of arrival differences of +/- 10 degrees occured when moving the wires connecting the CC1310 to the coherent receiver. The will probably be less problematic outdoors since the wires connecting the antennas to the coherent receiver in this scenario are spaced further apart and are more taut.
-
-Simulation tests with the PRBS-15 signal yielded unexpected high accuracy/high precision angle of arrival results. Comparisons between these tests and the sinusoidal tests reveal that the PRBS-15 had higher precision, but AoA accuracy tapers off sooner as the simulated AoA reduces. Because the sinusoidal signal is less precise, phase offset correction can yield starting AoAs that are +/- 1-2 degrees off from 90 degrees. This adversely effects lower angle of arrival calculations which are more sensitive than 90 degrees. A moving average can help fix this problem by averaging phase difference during phase offset correction. 
+#Increments through every 10 samples of AoA values from antenna
+#pairs 1 and 2.
+for i in range(len(a)/10):
+	# data segments are from index numbers increment_value*10 to
+	# (increment_value+1)*10
+	a_segment = a[i*10:(i+1)*10]
+	b_segment = b[i*10:(i+1)*10]
+	#mean value from 10 sample segment
+	a_mean=np.mean(a_segment)
+	b_mean=np.mean(b_segment)
+	#variance value from 10 sample segment
+	a_var=np.var(a_segment)
+	b_var=np.var(b_segment)
+	#More than 10x variance indicates that one pair has much more
+	#imprecision than the other. Variance is tested first, because
+	#the more inaccurate antenna pair could have a higher mean value
+	#if it switches from 0 to 180 degrees for example (which has
+	#been observed in simulated tests)
+	if (a_var > 200*b_var):
+		# Write data to file
+		f = open(filename, 'a')
+		np.savetxt(f, b_segment, "%s")
+		f.write ("antenna pair " + str(2) + "\n")
+		f.close()
+	elif (b_var > 200*a_var):
+		# Write data to file
+		f = open(filename, 'a')
+		np.savetxt(f, a_segment, "%s")
+		f.write ("antenna pair " + str(1) + "\n")
+		f.close()
+	#Else, decide optimal AoA value solely using the mean values. Higher
+	#AoA values are more likely to be more accurate.
+	elif (a_mean > b_mean):
+		# Write data to file
+		f = open(filename, 'a')
+		np.savetxt(f, a_segment, "%s")
+		f.write ("antenna pair " + str(1) + "\n")
+		f.close()
+	else:
+		# Write data to file
+		f = open(filename, 'a')
+		np.savetxt(f, b_segment, "%s")
+		f.write ("antenna pair " + str(2) + "\n")
+		f.close()
