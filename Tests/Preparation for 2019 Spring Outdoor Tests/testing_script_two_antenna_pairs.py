@@ -102,37 +102,37 @@ def main():
 		#variance value from 10 sample segment
 		a_var=np.var(a_segment)
 		b_var=np.var(b_segment)
-		#More than 10x variance indicates that one pair has much more
+		#More than 200x variance indicates that one pair has much more
 		#imprecision than the other. Variance is tested first, because
-		#the more inaccurate antenna pair could have a higher mean value
-		#if it switches from 0 to 180 degrees for example (which has
-		#been observed in simulated tests)
+		#the more inaccurate antenna pair could have a mean value closer
+		#to 90 if it switches from 0 to 180 degrees for example (which
+		#has been observed in simulated tests)
 		if (a_var > 200*b_var):
 			# Write data to file
-        		f = open(filename, 'a')
-        		np.savetxt(f, b_segment, "%s")
+        	f = open(filename, 'a')
+        	np.savetxt(f, b_segment, "%s")
 			f.write ("antenna pair " + str(2) + "\n")
-        		f.close()
+        	f.close()
 		elif (b_var > 200*a_var):
 			# Write data to file
-        		f = open(filename, 'a')
-        		np.savetxt(f, a_segment, "%s")
+        	f = open(filename, 'a')
+        	np.savetxt(f, a_segment, "%s")
 			f.write ("antenna pair " + str(1) + "\n")
-        		f.close()
-		#Else, decide optimal AoA value solely using the mean values. Higher
-		#AoA values are more likely to be more accurate.
-		elif (a_mean > b_mean):
+        	f.close()
+		#Else, decide optimal AoA value solely using the mean values. 
+		#AoA values closer to 90 degrres are more likely to be accurate.
+		elif (np.absolute(a_mean - 90) < np.absolute(b_mean - 90)):
 			# Write data to file
-        		f = open(filename, 'a')
-        		np.savetxt(f, a_segment, "%s")
+        	f = open(filename, 'a')
+        	np.savetxt(f, a_segment, "%s")
 			f.write ("antenna pair " + str(1) + "\n")
-        		f.close()
+        	f.close()
 		else:
 			# Write data to file
-        		f = open(filename, 'a')
-        		np.savetxt(f, b_segment, "%s")
+        	f = open(filename, 'a')
+        	np.savetxt(f, b_segment, "%s")
 			f.write ("antenna pair " + str(2) + "\n")
-        		f.close()
+        	f.close()
 
         f = open(filename, "a")
 
@@ -167,37 +167,37 @@ def main():
 		#variance value from 10 sample segment
 		a_var=np.var(a_segment)
 		b_var=np.var(b_segment)
-		#More than 10x variance indicates that one pair has much more
+		#More than 200x variance indicates that one pair has much more
 		#imprecision than the other. Variance is tested first, because
-		#the more inaccurate antenna pair could have a higher mean value
-		#if it switches from 0 to 180 degrees for example (which has
-		#been observed in simulated tests)
+		#the more inaccurate antenna pair could have a mean value closer
+		#to 90 if it switches from 0 to 180 degrees for example (which
+		#has been observed in simulated tests)
 		if (a_var > 200*b_var):
 			# Write data to file
-        		f = open(filename, 'a')
-        		np.savetxt(f, b_segment, "%s")
+        	f = open(filename, 'a')
+        	np.savetxt(f, b_segment, "%s")
 			f.write ("antenna pair " + str(2) + "\n")
-        		f.close()
+        	f.close()
 		elif (b_var > 200*a_var):
 			# Write data to file
-        		f = open(filename, 'a')
-        		np.savetxt(f, a_segment, "%s")
+        	f = open(filename, 'a')
+        	np.savetxt(f, a_segment, "%s")
 			f.write ("antenna pair " + str(1) + "\n")
-        		f.close()
-		#Else, decide optimal AoA value solely using the mean values. Higher
-		#AoA values are more likely to be more accurate.
-		elif (a_mean > b_mean):
+        	f.close()
+		#Else, decide optimal AoA value solely using the mean values. 
+		#AoA values closer to 90 degrres are more likely to be accurate.
+		elif (np.absolute(a_mean - 90) < np.absolute(b_mean - 90)):
 			# Write data to file
-        		f = open(filename, 'a')
-        		np.savetxt(f, a_segment, "%s")
+        	f = open(filename, 'a')
+        	np.savetxt(f, a_segment, "%s")
 			f.write ("antenna pair " + str(1) + "\n")
-        		f.close()
+        	f.close()
 		else:
 			# Write data to file
-        		f = open(filename, 'a')
-        		np.savetxt(f, b_segment, "%s")
+        	f = open(filename, 'a')
+        	np.savetxt(f, b_segment, "%s")
 			f.write ("antenna pair " + str(2) + "\n")
-        		f.close()
+        	f.close()
 
         f = open(filename, "a")
 
@@ -232,37 +232,37 @@ def main():
 		#variance value from 10 sample segment
 		a_var=np.var(a_segment)
 		b_var=np.var(b_segment)
-		#More than 10x variance indicates that one pair has much more
+		#More than 200x variance indicates that one pair has much more
 		#imprecision than the other. Variance is tested first, because
-		#the more inaccurate antenna pair could have a higher mean value
-		#if it switches from 0 to 180 degrees for example (which has
-		#been observed in simulated tests)
+		#the more inaccurate antenna pair could have a mean value closer
+		#to 90 if it switches from 0 to 180 degrees for example (which
+		#has been observed in simulated tests)
 		if (a_var > 200*b_var):
 			# Write data to file
-        		f = open(filename, 'a')
-        		np.savetxt(f, b_segment, "%s")
+        	f = open(filename, 'a')
+        	np.savetxt(f, b_segment, "%s")
 			f.write ("antenna pair " + str(2) + "\n")
-        		f.close()
+        	f.close()
 		elif (b_var > 200*a_var):
 			# Write data to file
-        		f = open(filename, 'a')
-        		np.savetxt(f, a_segment, "%s")
+        	f = open(filename, 'a')
+        	np.savetxt(f, a_segment, "%s")
 			f.write ("antenna pair " + str(1) + "\n")
-        		f.close()
-		#Else, decide optimal AoA value solely using the mean values. Higher
-		#AoA values are more likely to be more accurate.
-		elif (a_mean > b_mean):
+        	f.close()
+		#Else, decide optimal AoA value solely using the mean values. 
+		#AoA values closer to 90 degrres are more likely to be accurate.
+		elif (np.absolute(a_mean - 90) < np.absolute(b_mean - 90)):
 			# Write data to file
-        		f = open(filename, 'a')
-        		np.savetxt(f, a_segment, "%s")
+        	f = open(filename, 'a')
+        	np.savetxt(f, a_segment, "%s")
 			f.write ("antenna pair " + str(1) + "\n")
-        		f.close()
+        	f.close()
 		else:
 			# Write data to file
-        		f = open(filename, 'a')
-        		np.savetxt(f, b_segment, "%s")
+        	f = open(filename, 'a')
+        	np.savetxt(f, b_segment, "%s")
 			f.write ("antenna pair " + str(2) + "\n")
-        		f.close()
+        	f.close()
 
         f = open(filename, "a")
 
