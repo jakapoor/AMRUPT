@@ -1,4 +1,4 @@
-## Outdoor Testing 5/21/2019
+## Outdoor Testing 5/20/2019
 
 The results from the outdoor tests indicate no accuracy improvement from previous outdoor tests. Futhermore, no accuracy improvement was observed when a ground plane or reflector was used. The ground plane consisted of a ~0.8 by 1.2 meter cardboard sheet with both sides wrapped in aluminum foil and included holes for antenna placement. The ground plane was placed on top of the receiver rig with the longer side along the antennas. The reflector consisted of a ~0.6 by 1.2 meter cardboard sheet with one side wrapped in aluminum foil (facing the transmitter).
 
