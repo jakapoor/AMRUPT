@@ -1,0 +1,21 @@
+## Indoor Tests 5/8/2019
+
+The indoor tests were conducted with just one pair of antennas and the conventional beamforming program in Duffield Hall. Angles 15, 45, 90, and 135 were tested. The CC1310 was placed 2 meters from the testing rig at each of these angles. Also, whip and rubber ducky antennas were tested as well. A picture of the testing setup has been uploaded to this drive. 
+
+There was significant multipath interference from the indoor tests. This can be seen from the video [here](https://www.youtube.com/watch?v=JNJfrPgbPaI) in which sporadic angle changes of +/- 10 degrees were recorded when I made slight movements around the receiver rig. Despite the effects of multipath interference, 45 degree angle recordings had error lower than +/- 8 degrees and the testing rig recorded 90 degrees accurately at iterative tests (the testing rig recorded 90 degrees after it was moved to some arbitrary angle). The rubber ducky antenna tests ("rd" file ending) had lower accuracy performance than the whip antennas ("whip file ending).
+
+The tests also yielded an unexpected quadrature ambiguation between 45 and 135 degrees, in which the testing rig recorded 45 degrees when the rig was placed at 135 degrees. I ran some simulation tests to make sure the conventional beamforming program was able to disambiguate 45 and 135 degrees (simulationquadrant.txt files), and these tests did prove the system's capability to quadrature disambiguate. 
+
+#### Expectations for the Upcoming Outdoor Test
+
+The upcoming outdoor test will be conducted either Friday or Monday. The results from the indoor test indicate that the system would not be able to detect angles lower than 45 degrees from mean and variance metrics, which means a multiple antenna pair system would be futile under multipath conditions. Furthermore, simulation tests indicate that the system is functional up to the point where sma connectors, antennas, and the outdoor environment are included. Therefore, I have focused my time to try to improve the system under multipath conditions. Specifically, I have researched into the effects of ground multipath in transmitter-receiver RF systems and have found insightful sources of information on the outdoor multipath problem. 
+
+Over the past couple of months, we have accepted the following outdoor multipath model as truth: Since RF waves bounce in all directions omnidirectionally on the ground, multipath RF waves should cancel each other when conducting outdoor tests on a planar field. The problem with this deduction is that the premise is incorrect. RF waves behave the same way as rays of light in this manner. When a ray of light (or radio wave) reflects off a surface, the angle of incidence is equal to the angle of reflection. Under the two-ray ground-reflection model [1,2], the predominant multipath signal is reflected off the ground at a distance between the transmitter and the receiver (given that the transmitter and receiver heights are equal). The two-ray ground-reflection model would also explain why lower angles of arrival result in higher AoA recordings despite the 90 degree angle being iteratively correct for previous outdoor tests (the reflected wave adds to the phase difference of the LOS wave at the receiver, resulting in higher recordings at lower angles. Contrarily, the reflected wave adds no phase difference to the LOS wave at the receiver at 90 degrees, because the propagation distances of the reflected wave to both antennas would be equal for 90 degrees).
+
+Therefore, we should try to place RF absorbing material or a reflection object at this location for the next outdoor test to see if the accuracy of the system increases. Furthemore, we could include a stabilizing ground plane [3] on top of the rig which would help eliminate signals underneath the rig (including reflections from the tester). Although this would be unacceptable for a final working system in the wild, this system (if functional outdoors) would be a great starting point for future multipath research like [4]. 
+
+[1] https://ipfs.io/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/2-Ray_Ground_Reflection_Model.html
+[2] http://demonstrations.wolfram.com/RadioPropagationAndMultipathWithDiversityAntennas/
+[3] https://www.e-education.psu.edu/geog862/node/1721
+[4] https://core.ac.uk/download/pdf/95690287.pdf
+
